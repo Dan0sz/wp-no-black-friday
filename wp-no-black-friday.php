@@ -2,7 +2,7 @@
 /**
  * Plugin Name: No Black Friday for WordPress
  * Description: Shows a bar at the top of your site in November, to tell visitors you don't do Black Friday deals, because your price is always the best deal.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.3
  * Requires PHP: 7.4
  * Author: Daan from Daan.dev
