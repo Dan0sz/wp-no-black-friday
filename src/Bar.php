@@ -48,7 +48,7 @@ class Bar {
 		$url = $this->get_url();
 		?>
 		<div id="no-black-friday" class="nbf" role="region" aria-label="<?php esc_attr_e( 'No Black Friday deals', 'wp-no-black-friday' ); ?>" data-year="<?php echo esc_attr( wp_date( 'Y' ) ); ?>" data-until="<?php echo esc_attr( $this->get_end() ); ?>">
-			<div class="nbf__confetti" aria-hidden="true"><?php echo str_repeat( '<i></i>', 24 ); ?></div>
+			<div class="nbf__confetti" aria-hidden="true"><?php echo str_repeat( '<i></i>', 70 ); ?></div>
 			<p class="nbf__text">
 				<span class="nbf__tag"><del><?php esc_html_e( 'Black Friday', 'wp-no-black-friday' ); ?></del></span>
 				<span><?php echo wp_kses_post( $this->get_text() ); ?></span>
