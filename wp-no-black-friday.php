@@ -11,6 +11,7 @@
  * Primary Branch: master
  * License: MIT
  * Text Domain: wp-no-black-friday
+ * Domain Path: /languages
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -22,3 +23,7 @@ require_once NO_BLACK_FRIDAY_PLUGIN_DIR . 'src/Bar.php';
 add_action( 'plugins_loaded', function () {
 	new \Daan\NoBlackFriday\Bar();
 } );
+
+add_action( 'init', function () {
+	load_plugin_textdomain( 'wp-no-black-friday', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}, 1 );
