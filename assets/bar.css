@@ -1,0 +1,203 @@
+/**
+ * Override these custom properties in your theme to match its colors.
+ */
+.nbf {
+    --nbf-from: var(--global-palette2, #1ccaf4);
+    --nbf-to: var(--global-palette1, #00adda);
+    --nbf-color: var(--global-palette3, #1a202c);
+    --nbf-strike: #e11d48;
+
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: .75rem 3.5rem;
+    background: linear-gradient(135deg, var(--nbf-from), var(--nbf-to));
+    color: var(--nbf-color);
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.nbf .nbf__text {
+    position: relative;
+    max-width: 60rem;
+    margin: 0 auto;
+    text-wrap: balance;
+}
+
+.nbf strong {
+    font-family: var(--global-heading-font-family, inherit);
+    font-weight: 600;
+}
+
+/* A price tag, with Black Friday crossed out. */
+.nbf__tag {
+    display: inline-block;
+    margin-right: .5rem;
+    padding: .1rem .75rem .1rem 1.4rem;
+    border-radius: .35rem;
+    background: radial-gradient(circle at .75rem 50%, var(--nbf-to) .2rem, var(--nbf-color) .23rem);
+    color: #fff;
+    font-family: var(--global-heading-font-family, inherit);
+    font-weight: 600;
+    white-space: nowrap;
+    transform: rotate(-3deg);
+}
+
+.nbf__tag del {
+    position: relative;
+    text-decoration: none;
+}
+
+.nbf__tag del::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -.2rem;
+    left: -.2rem;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--nbf-strike);
+    transform: rotate(-5deg);
+}
+
+.nbf .nbf__link,
+.nbf .nbf__link:hover {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+    white-space: nowrap;
+}
+
+.nbf .nbf__link:hover {
+    text-decoration-thickness: 2px;
+}
+
+.nbf .nbf__close,
+.nbf .nbf__close:hover,
+.nbf .nbf__close:focus {
+    position: absolute;
+    top: 50%;
+    right: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: none;
+    color: inherit;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.nbf .nbf__close:hover,
+.nbf .nbf__close:focus-visible {
+    background: rgb(255 255 255 / .35);
+}
+
+/* Confetti, on both sides of the text. */
+.nbf__confetti {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.nbf__confetti i {
+    position: absolute;
+    top: -1rem;
+    width: .4rem;
+    height: .7rem;
+    border-radius: 1px;
+    background: #fff;
+    animation: nbf-fall 7s linear infinite;
+}
+
+.nbf__confetti i:nth-child(3n) {
+    background: #fde047;
+}
+
+.nbf__confetti i:nth-child(3n + 1) {
+    background: #f472b6;
+}
+
+.nbf__confetti i:nth-child(4n) {
+    width: .45rem;
+    height: .45rem;
+    border-radius: 50%;
+}
+
+.nbf__confetti i:nth-child(1) { left: 5.5%; animation-duration: 7.8s; animation-delay: -7.2s; }
+.nbf__confetti i:nth-child(2) { left: 89.7%; animation-duration: 7.5s; animation-delay: -4.4s; }
+.nbf__confetti i:nth-child(3) { left: 2.9%; animation-duration: 7.6s; animation-delay: -4.8s; }
+.nbf__confetti i:nth-child(4) { left: 92.3%; animation-duration: 5.5s; animation-delay: -1.7s; }
+.nbf__confetti i:nth-child(5) { left: 1.9%; animation-duration: 9.0s; animation-delay: -6.3s; }
+.nbf__confetti i:nth-child(6) { left: 86.3%; animation-duration: 9.9s; animation-delay: -9.6s; }
+.nbf__confetti i:nth-child(7) { left: 7.6%; animation-duration: 8.1s; animation-delay: -1.3s; }
+.nbf__confetti i:nth-child(8) { left: 86.1%; animation-duration: 7.6s; animation-delay: -0.5s; }
+.nbf__confetti i:nth-child(9) { left: 2.9%; animation-duration: 6.2s; animation-delay: -0.2s; }
+.nbf__confetti i:nth-child(10) { left: 89.7%; animation-duration: 7.2s; animation-delay: -6.1s; }
+.nbf__confetti i:nth-child(11) { left: 6.2%; animation-duration: 8.2s; animation-delay: -4.1s; }
+.nbf__confetti i:nth-child(12) { left: 91.3%; animation-duration: 7.3s; animation-delay: -2.0s; }
+.nbf__confetti i:nth-child(13) { left: 11.0%; animation-duration: 10.0s; animation-delay: -8.4s; }
+.nbf__confetti i:nth-child(14) { left: 91.7%; animation-duration: 6.6s; animation-delay: -1.5s; }
+.nbf__confetti i:nth-child(15) { left: 3.9%; animation-duration: 5.4s; animation-delay: -4.1s; }
+.nbf__confetti i:nth-child(16) { left: 89.2%; animation-duration: 9.2s; animation-delay: -3.6s; }
+.nbf__confetti i:nth-child(17) { left: 10.6%; animation-duration: 9.2s; animation-delay: -0.0s; }
+.nbf__confetti i:nth-child(18) { left: 87.7%; animation-duration: 9.6s; animation-delay: -4.5s; }
+.nbf__confetti i:nth-child(19) { left: 10.8%; animation-duration: 7.0s; animation-delay: -0.5s; }
+.nbf__confetti i:nth-child(20) { left: 91.1%; animation-duration: 8.9s; animation-delay: -2.4s; }
+.nbf__confetti i:nth-child(21) { left: 1.9%; animation-duration: 6.7s; animation-delay: -6.4s; }
+.nbf__confetti i:nth-child(22) { left: 92.1%; animation-duration: 5.6s; animation-delay: -1.4s; }
+.nbf__confetti i:nth-child(23) { left: 2.0%; animation-duration: 5.3s; animation-delay: -4.2s; }
+.nbf__confetti i:nth-child(24) { left: 87.4%; animation-duration: 7.8s; animation-delay: -3.5s; }
+
+@keyframes nbf-fall {
+    to {
+        top: calc(100% + 1rem);
+        transform: translateX(.75rem) rotate(540deg);
+    }
+}
+
+@media (max-width: 767px) {
+    .nbf {
+        padding: .75rem 3rem .75rem 1rem;
+        font-size: .9rem;
+        text-align: left;
+    }
+
+    .nbf .nbf__close,
+    .nbf .nbf__close:hover,
+    .nbf .nbf__close:focus {
+        right: .4rem;
+    }
+
+    /* The text takes up the whole width, so less confetti, and behind it. */
+    .nbf__confetti {
+        opacity: .35;
+    }
+
+    .nbf__confetti i:nth-child(n + 13) {
+        display: none;
+    }
+}
+
+/* The confetti lies still for visitors who prefer less motion. */
+@media (prefers-reduced-motion: reduce) {
+    .nbf__confetti i {
+        animation-play-state: paused;
+    }
+}
+
+@media print {
+    .nbf {
+        display: none;
+    }
+}
