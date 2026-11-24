@@ -7,10 +7,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-11-24
+
 ### Added
 
 - `no_black_friday_post_slug` filter, to link the bar to a post with a slug other than `black-friday`, without having
   to rename the post or look up its URL yourself with `no_black_friday_url`.
+- Dutch (nl_NL) translation.
 
 ### Security
 
