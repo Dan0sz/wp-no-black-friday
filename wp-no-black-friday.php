@@ -7,6 +7,7 @@
  * Requires PHP: 7.4
  * Author: Daan from Daan.dev
  * Author URI: https://daan.dev
+ * Update URI: Dan0sz/wp-no-black-friday
  * GitHub Plugin URI: Dan0sz/wp-no-black-friday
  * Primary Branch: master
  * License: MIT
