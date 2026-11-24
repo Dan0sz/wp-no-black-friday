@@ -116,7 +116,13 @@ class Bar {
 	 * @return string
 	 */
 	private function get_url() {
-		$post = get_page_by_path( self::POST_SLUG, OBJECT, 'post' );
+		/**
+		 * The slug of the post the bar links to, e.g. if your post is called something else.
+		 *
+		 * @param string $slug Defaults to black-friday.
+		 */
+		$slug = (string) apply_filters( 'no_black_friday_post_slug', self::POST_SLUG );
+		$post = get_page_by_path( $slug, OBJECT, 'post' );
 		$url  = $post && $post->post_status === 'publish' ? get_permalink( $post ) : '';
 
 		// No link to the page they're already on.
@@ -127,7 +133,7 @@ class Bar {
 		/**
 		 * Where the link goes, e.g. to a post that explains why there are no Black Friday deals.
 		 *
-		 * @param string $url The published post with the slug black-friday, empty for no link.
+		 * @param string $url The published post with the slug black-friday (see no_black_friday_post_slug), empty for no link.
 		 */
 		return apply_filters( 'no_black_friday_url', $url );
 	}
